@@ -21,7 +21,8 @@ def get_file_name(path):
     files = []
     for filename in os.listdir(path):
         files.append(os.path.join(path, filename))
-    return sorted(sorted(files))
+    files = sorted(sorted(files))
+    return [ret for ret in files if not ret.startswith(path + "/.")] # 隠しファイルを読み込まない、リスト表記
 
 #平均的な変化を
 def get_average_change(data, span=5, if_plot=False):
