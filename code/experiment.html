@@ -1,0 +1,76 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="experiment.css">
+</head>
+
+
+<body>
+  <div class="input-name show frame">
+    <div class="status"><p>お名前を入力してください<br>（半角英数字でお願いします。）</p></div>
+    <div><textarea id="name" class="name" rows="1" cols="25" ></textarea></div>
+    <div class="button" onclick="saveName(); showPage('test-number');"><p>決定</p></div>
+  </div>
+
+  <div class="test-number hide frame">
+    <div id="test-number-introduction" class="test-introduction"
+          onClick="hideObj('#test-number-introduction'); showObj('#test-number-introdution-main'); startGame();"></div>
+    <div id="test-number-introdution-main" class="hide">
+      <div class="status score"><p class="score-txt">今の得点： 0000</p></div>
+      <div class="result hide"></div>
+      <div class="cards hide">
+        <div id="test-number-left" class="left-card card" onClick="choosed('test', 'left')"></div>
+        <div id="test-number-middle" class="middle-card card" onClick="choosed('test', 'middle')"></div>
+        <div id="test-number-right" class="right-card card" onClick="choosed('test','right')"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="test-shape hide">
+    <div id="test-shape-introduction" class="test-introduction" onClick="hideObj('#test-shape-introduction');"></div>
+    <div class="status"><p class="score">今の得点：  000</p><p class="result"></p></div>
+    <div class="cards">
+      <div id="test-shape-left" class="left-card card" onClick="getRandomImg('test-shape','left');"></div>
+      <div id="test-shape-middle" class="middle"></div>
+      <div id="test-shape-right" class="right-card card" onClick="getRandomImg('test-shape','right');"></div>
+    </div>
+  </div>
+
+  <div class="test-color hide">
+    <div id="test-color-introduction" class="test-introduction" onClick="hideObj('#test-color-introduction');"></div>
+    <div class="status"><p class="score">今の得点：  000</p><p class="result"></p></div>
+    <div class="cards">
+      <div id="test-color-left" class="left-card card" onClick="getRandomImg('test-color','left');"></div>
+      <div id="test-color-middle" class="middle"></div>
+      <div id="test-color-right" class="right-card card" onClick="getRandomImg('test-color','right');"></div>
+    </div>
+  </div>
+
+  <div class="trial hide">
+    <div id="trial-introduction" class="trial-introduction" onClick="hideObj('#trial-introduction');"></div>
+    <div class="status"><p class="score">今の得点：  000</p><p class="result"></p></div>
+    <div class="cards">
+      <div id="trial-left" class="left-card card" onClick="getRandomImg4trial('trial','left');"></div>
+      <div id="trial-middle" class="middle"></div>
+      <div id="trial-right" class="right-card card" onClick="getRandomImg4trial('trial','right');"></div>
+    </div>
+  </div>
+
+  <div class="end hide">
+    <div><p>参加ありがとうございました。<br>これで終了です。</p><p class="result"></p></div>
+  </div>
+
+
+<script src="jquery-2.1.1.js"></script>
+<script src="saveCsv.js"></script>
+<script src="experiment.js"></script>
+
+
+
+</body>
+</html>
